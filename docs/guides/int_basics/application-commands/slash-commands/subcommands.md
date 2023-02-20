@@ -160,7 +160,7 @@ private async Task HandleSettingsCommand(SocketSlashCommand command)
     var fieldName = command.Data.Options.First().Name;
     var getOrSet = command.Data.Options.First().Options.First().Name;
     // Since there is no value on a get command, we use the ? operator because "Options" can be null.
-    var value = command.Data.Options.First().Options.First().Options?.FirstOrDefault().Value;
+    var value = command.Data.Options.First().Options.First().Options?.FirstOrDefault();
 
     switch (fieldName)
     {
